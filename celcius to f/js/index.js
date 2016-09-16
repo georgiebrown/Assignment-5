@@ -5,7 +5,7 @@ var fahrenheit = 0;
 
 function start(){
   $('#cToF').click(getFValue);
-  $('#fToC').click(convertToC);
+  $('#fToC').click(getCValue);
 }
 
 function getFValue() {
@@ -16,7 +16,7 @@ function getFValue() {
 
 function  convertCValue() {
   var cValue = $('#c').val();
-  var convertedCValue = (cValue - 32) * .5556;
+  var convertedCValue = cValue * 1.8 + 32;
   return convertedCValue;
 }
 
@@ -24,13 +24,19 @@ function writeFtoPage(){
   $('#f').val(fahrenheit);
 }
 
-//
-//   // fahrenheit =parseFloat($('#f').val());
-//   // fahrenheit = parseFloat($('#c').val()-32) * .5556;
-//
-//
-// }
-//
-// function convertToC() {
-//   celsius = parseFloat($('#c').val());
-// }
+function getCValue (){
+  var cValue = convertFValue();
+  celsius = cValue
+  writeCtoPage();
+}
+
+function convertFValue() {
+  var fValue = $('#f').val();
+  var convertedFValue = (fValue - 32) / 1.8;
+  return convertedFValue;
+
+}
+
+function writeCtoPage() {
+  $('#c').val(celsius);
+}
