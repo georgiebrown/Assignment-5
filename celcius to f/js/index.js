@@ -5,7 +5,7 @@ var fahrenheit = 0;
 
 function start(){
   $('#cToF').click(getFValue);
-  // $('#fToC').click(convertToC);
+  $('#fToC').click(convertToC);
 }
 
 function getFValue() {
@@ -16,12 +16,12 @@ function getFValue() {
 
 function  convertCValue() {
   var cValue = $('#c').val();
-  // var convertedCValue = (cValue - 32) * .5556;
-  return cValue;
+  var convertedCValue = (cValue - 32) * .5556;
+  return convertedCValue;
 }
 
 function writeFtoPage(){
-  $('#f').text(fahrenheit);
+  $('#f').val(fahrenheit);
 }
 
 //
