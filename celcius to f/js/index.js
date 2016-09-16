@@ -9,12 +9,12 @@ function start(){
 }
 
 function getFValue() {
-  var fValue = convertCelciusValue();
+  var fValue = convertCValue();
   fahrenheit = fValue;
   writeFtoPage();
 }
 
-function  convertCelciusValue() {
+function  convertCValue() {
   var cValue = $('#c').val();
   // var convertedCValue = (cValue - 32) * .5556;
   return cValue;
